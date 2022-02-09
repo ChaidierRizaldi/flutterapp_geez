@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:flutterapp_geez1/pages/cart_page.dart';
+import 'package:flutterapp_geez1/pages/product_page.dart';
+import 'package:flutterapp_geez1/pages/search_page.dart';
 import 'package:flutterapp_geez1/theme.dart';
 import 'package:flutterapp_geez1/widgets/categories_tile.dart';
 import 'package:flutterapp_geez1/widgets/product_list.dart';
@@ -44,9 +47,22 @@ class HomePage extends StatelessWidget {
                           hintStyle: greyTextStyle.copyWith(
                             fontSize: 14,
                           ),
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: greyColor,
+                          prefixIcon: InkWell(
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                context,
+                                PageRouteBuilder(
+                                  pageBuilder:
+                                      (context, animation1, animation2) =>
+                                          SearchPage(),
+                                  transitionDuration: Duration(seconds: 0),
+                                ),
+                              );
+                            },
+                            child: Icon(
+                              Icons.search,
+                              color: greyColor,
+                            ),
                           ),
                         ),
                       ),
@@ -65,9 +81,22 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/checkout_icon.png',
-                          width: 28,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              PageRouteBuilder(
+                                pageBuilder:
+                                    (context, animation1, animation2) =>
+                                        CartPage(),
+                                transitionDuration: Duration(seconds: 0),
+                              ),
+                            );
+                          },
+                          child: Image.asset(
+                            'assets/checkout_icon.png',
+                            width: 28,
+                          ),
                         ),
                       ],
                     ),
@@ -278,7 +307,7 @@ class HomePage extends StatelessWidget {
                 top: 20,
                 left: 18,
                 right: 18,
-                bottom: 100,
+                bottom: 50,
               ),
               child: Column(
                 children: [
@@ -359,6 +388,81 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedLabelStyle: whiteTextStyle.copyWith(
+          fontSize: 10,
+        ),
+        unselectedLabelStyle: greyTextStyle.copyWith(
+          fontSize: 10,
+        ),
+        selectedItemColor: whiteColor,
+        unselectedItemColor: greyColor,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: navyColor,
+        currentIndex: 0,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                  top: 16,
+                  bottom: 5,
+                ),
+                child: Image.asset(
+                  'assets/navbar_homeon.png',
+                  width: 16,
+                ),
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(
+                  top: 16,
+                  bottom: 5,
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation1, animation2) =>
+                            ProductPage(),
+                        transitionDuration: Duration(seconds: 0),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/navbar_product.png',
+                    width: 16,
+                  ),
+                ),
+              ),
+              label: 'Product'),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(
+                  top: 16,
+                  bottom: 5,
+                ),
+                child: Image.asset(
+                  'assets/navbar_notif.png',
+                  width: 16,
+                ),
+              ),
+              label: 'Notification'),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(
+                  top: 16,
+                  bottom: 5,
+                ),
+                child: Image.asset(
+                  'assets/navbar_profile.png',
+                  width: 16,
+                ),
+              ),
+              label: 'Profile'),
+        ],
       ),
     );
   }
