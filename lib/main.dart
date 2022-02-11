@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp_geez1/pages/cart_page.dart';
 import 'package:flutterapp_geez1/pages/detail_page.dart';
 import 'package:flutterapp_geez1/pages/home_page.dart';
+import 'package:flutterapp_geez1/pages/order_detail.dart';
 import 'package:flutterapp_geez1/pages/product_page.dart';
 import 'package:flutterapp_geez1/pages/search_page.dart';
 import 'package:flutterapp_geez1/pages/started_page.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DetailPage(),
+      home: OrderDetail(),
     );
   }
 }
