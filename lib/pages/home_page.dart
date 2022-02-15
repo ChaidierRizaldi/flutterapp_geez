@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp_geez1/pages/cart_page.dart';
 import 'package:flutterapp_geez1/pages/notification_page.dart';
 import 'package:flutterapp_geez1/pages/product_page.dart';
+import 'package:flutterapp_geez1/pages/profile_page.dart';
 import 'package:flutterapp_geez1/pages/search_page.dart';
 import 'package:flutterapp_geez1/theme.dart';
 import 'package:flutterapp_geez1/widgets/categories_tile.dart';
@@ -469,9 +470,21 @@ class HomePage extends StatelessWidget {
                   top: 16,
                   bottom: 5,
                 ),
-                child: Image.asset(
-                  'assets/navbar_profile.png',
-                  width: 16,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation1, animation2) =>
+                            ProfilePage(),
+                        transitionDuration: Duration(seconds: 0),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/navbar_profile.png',
+                    width: 16,
+                  ),
                 ),
               ),
               label: 'Profile'),
