@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp_geez1/pages/home_page.dart';
+import 'package:flutterapp_geez1/pages/order_detail.dart';
 import 'package:flutterapp_geez1/theme.dart';
 
 class CartPage extends StatelessWidget {
@@ -217,12 +218,21 @@ class CartPage extends StatelessWidget {
                   height: 47,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                      backgroundColor: yellowcreamColor,
+                      backgroundColor: navylightColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              OrderDetail(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Checkout',
                       style: whiteTextStyle.copyWith(

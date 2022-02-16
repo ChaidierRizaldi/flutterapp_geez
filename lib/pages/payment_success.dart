@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutterapp_geez1/pages/home_page.dart';
+import 'package:flutterapp_geez1/pages/order_history.dart';
 import 'package:flutterapp_geez1/theme.dart';
 
 class PaymentSuccess extends StatelessWidget {
@@ -46,12 +48,21 @@ class PaymentSuccess extends StatelessWidget {
             height: 47,
             child: TextButton(
               style: TextButton.styleFrom(
-                backgroundColor: yellowcreamColor,
+                backgroundColor: navylightColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation1, animation2) =>
+                        OrderHistory(),
+                    transitionDuration: Duration(seconds: 0),
+                  ),
+                );
+              },
               child: Text(
                 'Track Order Status',
                 style: whiteTextStyle.copyWith(
@@ -65,7 +76,15 @@ class PaymentSuccess extends StatelessWidget {
             height: 30,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation1, animation2) => HomePage(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+              );
+            },
             child: Text(
               'Back to Home',
               style: yellowcreamTextStyle.copyWith(

@@ -1,13 +1,19 @@
 // ignore_for_file: unused_import, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutterapp_geez1/pages/cancel_page.dart';
 import 'package:flutterapp_geez1/pages/cart_page.dart';
+import 'package:flutterapp_geez1/pages/create_address.dart';
 import 'package:flutterapp_geez1/pages/detail_page.dart';
+import 'package:flutterapp_geez1/pages/edit_address.dart';
+import 'package:flutterapp_geez1/pages/edit_profile.dart';
+import 'package:flutterapp_geez1/pages/grey_cancel.dart';
 import 'package:flutterapp_geez1/pages/home_page.dart';
 import 'package:flutterapp_geez1/pages/order_detail.dart';
 import 'package:flutterapp_geez1/pages/payment_success.dart';
 import 'package:flutterapp_geez1/pages/product_page.dart';
 import 'package:flutterapp_geez1/pages/profile_page.dart';
+import 'package:flutterapp_geez1/pages/rate_page.dart';
 import 'package:flutterapp_geez1/pages/search_page.dart';
 import 'package:flutterapp_geez1/pages/started_page.dart';
 
@@ -20,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: StartedPage(),
     );
   }
 }

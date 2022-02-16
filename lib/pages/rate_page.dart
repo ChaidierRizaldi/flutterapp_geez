@@ -1,12 +1,11 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:flutterapp_geez1/pages/cart_page.dart';
 import 'package:flutterapp_geez1/pages/home_page.dart';
-import 'package:flutterapp_geez1/pages/payment_success.dart';
+import 'package:flutterapp_geez1/pages/order_history.dart';
 import 'package:flutterapp_geez1/theme.dart';
 
-class OrderDetail extends StatelessWidget {
+class RateOrderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +26,7 @@ class OrderDetail extends StatelessWidget {
                         context,
                         PageRouteBuilder(
                           pageBuilder: (context, animation1, animation2) =>
-                              CartPage(),
+                              OrderHistory(),
                           transitionDuration: Duration(seconds: 0),
                         ),
                       );
@@ -355,23 +354,14 @@ class OrderDetail extends StatelessWidget {
                   height: 47,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                      backgroundColor: navylightColor,
+                      backgroundColor: yellowcreamColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        PageRouteBuilder(
-                          pageBuilder: (context, animation1, animation2) =>
-                              PaymentSuccess(),
-                          transitionDuration: Duration(seconds: 0),
-                        ),
-                      );
-                    },
+                    onPressed: () {},
                     child: Text(
-                      'Checkout',
+                      'Rate Order',
                       style: whiteTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
