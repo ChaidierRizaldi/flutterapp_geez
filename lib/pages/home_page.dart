@@ -316,12 +316,15 @@ class HomePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProductList(
-                        imageUrl: 'assets/product_two.png',
-                        name: 'Nike Air Force X',
-                        rating: 'assets/star_icon.png',
-                        amount: '(16)',
-                        price: 'Rp1.650.000',
+                      InkWell(
+                        onTap: () {},
+                        child: ProductList(
+                          imageUrl: 'assets/product_two.png',
+                          name: 'Nike Air Force X',
+                          rating: 'assets/star_icon.png',
+                          amount: '(16)',
+                          price: 'Rp1.650.000',
+                        ),
                       ),
                       ProductList(
                         imageUrl: 'assets/watch.png',

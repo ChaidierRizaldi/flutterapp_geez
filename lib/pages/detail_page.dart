@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp_geez1/pages/cart_page.dart';
 import 'package:flutterapp_geez1/pages/home_page.dart';
+import 'package:flutterapp_geez1/pages/order_detail.dart';
 import 'package:flutterapp_geez1/theme.dart';
 import 'package:flutterapp_geez1/widgets/product_list.dart';
 import 'package:flutterapp_geez1/widgets/variations_tile.dart';
@@ -383,14 +384,23 @@ class DetailPage extends StatelessWidget {
                   height: 47,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                      backgroundColor: yellowcreamColor,
+                      backgroundColor: navylightColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation1, animation2) =>
+                              OrderDetail(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
+                      );
+                    },
                     child: Text(
-                      'Checkout',
+                      'Buy Now',
                       style: whiteTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
