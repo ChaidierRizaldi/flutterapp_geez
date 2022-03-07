@@ -1,6 +1,6 @@
 # flutterapp_geez1
 
-Membangun aplikasi travel dan pesawat menggunakan framework Flutter dan bahasa pemrograman Dart. Proses pembelajaran proyek yaitu dari tahapan Slicing desain, penerapan arsitektur BLoC hingga pengaktifan Null Safety pada Flutter.
+Mendesain & Membangun Aplikasi E-Commerce "Geez" dengan Adobe XD dan Framework Flutter. Proses pembelajaran proyek yaitu dari tahapan desain UI Menggunakan Adobe XD, setelah itu melakukan tahap Slicing ke dalam kode menggunakan Flutter SDK. Slicing dilakukan untuk menulis coding dalam satu basis kode dengan beragam Widget praktis seperti Scaffold, Drawer, hingga Navigator.
 
 ## Getting Started
 
